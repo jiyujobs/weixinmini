@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/fortune/fortune",
+    "pages/world/world",
+    "pages/mood/mood"
+  ],
+  "tabBar": {
+    "list":[
+      {
+        "pagePath": "pages/index/index",
+        "text": "天气"
+      },
+      {
+        "pagePath": "pages/fortune/fortune",
+        "text": "运势"
+      },
+      {
+        "pagePath": "pages/world/world",
+        "text": "世界新闻"
+      },
+      {
+        "pagePath": "pages/mood/mood",
+        "text": "心情日记"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#3883FA",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "今日天气",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "sitemapLocation": "sitemap.json"
+}
