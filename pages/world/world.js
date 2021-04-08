@@ -5,14 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    channel:'头条',
+    news:''
+  },
+  getNews:function(){
+    var that=this;
+    wx.request({
+      url: 'https://api.jisuapi.com/news/get?appkey=87db7ff44bc87000',
+      data:{
+        channel:that.data.channel
+      },
+      success:function(res){
+        console.log(res.data)
+        that.setData({news:res.data.result})
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getNews();
   },
 
   /**

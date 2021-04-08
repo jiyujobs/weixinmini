@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    region:['辽宁省','大连市','金州区'],
+    region:['本地','天气','状况'],
     now:''
   },
   changeRegion:function(e){
@@ -14,37 +14,48 @@ Page({
     })
     this.getWeather();
   },
-  getWeather:function(){
+  getLocation:function(){
+    var that=this;
+    wx.getLocation({
+      type: 'wgs84',
+      success:function(res) {
+        console.log(res)
+        var longitude = res.longitude
+        var latitude = res.latitude
+        that.LoadCity(longitude, latitude)
+      }
+     })
+  },
+  LoadCity:function(longitude, latitude){
     var that=this;
     wx.request({
-      url: 'https://geoapi.qweather.com/v2/city/lookup?',
-      data:{
-        location:that.data.region[1],
-        key:'641aba5522fe4274b3a14bf042f60af7'
-      },
+      url: 'https://api.jisuapi.com/weather/query?location=' + latitude + ',' + longitude + '&appkey=87db7ff44bc87000',
       success:function(res){
-        that.setData({Place_ID:res.data.location[0].id})
-        console.log(res.data) 
-        wx.request({
-          url: 'https://devapi.qweather.com/v7/weather/now?',
-          data:{
-            location:that.data.Place_ID,
-            key:'641aba5522fe4274b3a14bf042f60af7'
-          },
-          success:function(res){
-           console.log(res.data)
-           that.setData({now:res.data.now})
-          }
-        }) 
+        console.log(res.data)
+        that.setData({now:res.data.result})
       }
     })
   },
+  getWeather:function(){
+    var that=this;
+    wx.request({
+      url: 'https://api.jisuapi.com/weather/query?&appkey=87db7ff44bc87000',
+      data:{
+        city:that.data.region[2],
+      },
+      success:function(res){
+        that.setData({now:res.data.result})
+        console.log(res.data) 
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getWeather();
+    this.getLocation();
   },
 
   /**

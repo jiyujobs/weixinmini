@@ -6,7 +6,8 @@ Page({
    */
   data: {
     date:'2021-04-08',
-    now:''
+    now:'',
+    now1:''
   },
   changeDate:function(e){
     this.setData({
@@ -15,17 +16,28 @@ Page({
     this.getFortune();
   },
   getFortune:function(){
-    var myDate = new Date(this.now);
+    var that=this;
+    var myDate = new Date(that.date);
     wx.request({
-      url: 'https://way.jd.com/jisuapi/date?&appkey=1dd72e8e3b7c43e7c8554f066538335d',
-      date:{
+      url: 'https://api.jisuapi.com/huangli/date?appkey=87db7ff44bc87000',
+      data:{
         year:myDate.getFullYear,
         month:myDate.getMonth,
         day:myDate.getDate
       },
       success:function(res){
         console.log(res.data)
-        this.setData({now:res.data.result.result})
+        that.setData({now:res.data.result})
+      }
+    }),
+    wx.request({
+      url: 'https://api.jisuapi.com/astro/fortune?astroid=1&appkey=87db7ff44bc87000',
+      data:{
+        date:that.data.date
+      },
+      success:function(res){
+        console.log(res.data)
+        that.setData({now1:res.data.result.today})
       }
     })
   },

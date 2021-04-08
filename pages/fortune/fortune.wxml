@@ -3,7 +3,7 @@
   <picker mode='date' start="2000-01-01" end="2030-01-01" bindchange='changeDate'>
   <view>{{date}}</view>
   </picker>
-  <view>农历{{now.nongli}}</view>
+  <view>{{now.nongli}}</view>
   <view class='bar'>
     <view class='box'>宜</view>
     <view class='box'>忌</view>
@@ -11,5 +11,14 @@
   <view class='bar'>
     <view class='box'>{{now.yi}}</view>
     <view class='box'>{{now.ji}}</view>
+  </view>
+  <view>今日星座{{now1.star}}</view>
+  <view class='bar'>
+    <view class='box'>幸运颜色</view>
+    <view class='box'>幸运数字</view>
+  </view>
+  <view class='bar'>
+    <view class='box'>{{now1.color}}</view>
+    <view class='box'>{{now1.number}}</view>
   </view>
 </view>

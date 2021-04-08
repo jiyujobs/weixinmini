@@ -4,27 +4,27 @@
   <view>{{region}}</view>
   </picker>
   <text>{{now.temp}}℃ {{now.text}}</text>
-  <image src='../../images/{{now.icon}}.png'></image>
+  <image src='../../images/{{now.img}}.png'></image>
  <view class='detail'>
   <view class='bar'>
+    <view class='box'>气温</view>
+    <view class='box'>最高气温</view>
+    <view class='box'>最低气温</view>
+  </view>
+  <view class='bar'>
+    <view class='box'>{{now.temp}}℃</view>
+    <view class='box'>{{now.temphigh}}℃</view>
+    <view class='box'>{{now.templow}}℃</view>
+  </view>
+  <view class='bar'>
     <view class='box'>湿度</view>
-    <view class='box'>气压</view>
-    <view class='box'>能见度</view>
-  </view>
-  <view class='bar'>
-    <view class='box'>{{now.humidity}}%</view>
-    <view class='box'>{{now.pressure}}hPa</view>
-    <view class='box'>{{now.vis}}km</view>
-  </view>
-  <view class='bar'>
-    <view class='box'>风向</view>
-    <view class='box'>风速</view>
+    <view class='box'>AQI指数</view>
     <view class='box'>风力</view>
   </view>
   <view class='bar'>
-    <view class='box'>{{now.windDir}}</view>
-    <view class='box'>{{now.windSpeed}}km/h</view>
-    <view class='box'>{{now.windScale}}级</view>
+    <view class='box'>{{now.humidity}}%</view>
+    <view class='box'>{{now.aqi.aqi}}</view>
+    <view class='box'>{{now.windpower}}</view>
   </view>
  </view>
 </view>

@@ -1,2 +1,4 @@
 <!--pages/world/world.wxml-->
-<text>pages/world/world.wxml</text>
+<view>{{news.list[0].title}}</view>
+<view>{{news.list[0].time}}</view>
+<view>{{news.list[0].content}}</view>
