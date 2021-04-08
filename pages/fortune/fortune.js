@@ -5,14 +5,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    date:'2021-04-08',
+    now:''
   },
+  changeDate:function(e){
+    this.setData({
+      date:e.detail.value
+    })
+  },
+  getFortune:function(){
+    var that=this;
+    wx.request({
+      url: 'https://way.jd.com/jisuapi/date?',
+      date:{
+        year:that.data.substring(0,4),
+        month:that.data.substring(5,7),
+        day:that.data.substring(8,10),
+        appkey:'1dd72e8e3b7c43e7c8554f066538335d'
+      },
+      success:function(res){
+        console.log(res.data)
+        that.setData({now:res.data.now})
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getFortune();
   },
 
   /**

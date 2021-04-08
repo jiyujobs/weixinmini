@@ -1,2 +1,15 @@
 <!--pages/fortune/fortune.wxml-->
-<text>pages/fortune/fortune.wxml</text>
+<view class='container'>
+  <picker mode='date' start="2000-01-01" end="2030-01-01" bindchange='changeDate'>
+  <view>{{date}}</view>
+  </picker>
+  <view>阴历</view>
+  <view class='bar'>
+    <view class='box'>宜</view>
+    <view class='box'>忌</view>
+  </view>
+  <view class='bar'>
+    <view class='box'>0</view>
+    <view class='box'>0</view>
+  </view>
+</view>
