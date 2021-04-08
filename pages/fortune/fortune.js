@@ -12,20 +12,20 @@ Page({
     this.setData({
       date:e.detail.value
     })
+    this.getFortune();
   },
   getFortune:function(){
-    var that=this;
+    var myDate = new Date(this.now);
     wx.request({
-      url: 'https://way.jd.com/jisuapi/date?',
+      url: 'https://way.jd.com/jisuapi/date?&appkey=1dd72e8e3b7c43e7c8554f066538335d',
       date:{
-        year:that.data.substring(0,4),
-        month:that.data.substring(5,7),
-        day:that.data.substring(8,10),
-        appkey:'1dd72e8e3b7c43e7c8554f066538335d'
+        year:myDate.getFullYear,
+        month:myDate.getMonth,
+        day:myDate.getDate
       },
       success:function(res){
         console.log(res.data)
-        that.setData({now:res.data.now})
+        this.setData({now:res.data.result.result})
       }
     })
   },
