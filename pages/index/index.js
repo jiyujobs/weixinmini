@@ -32,7 +32,10 @@ Page({
       url: 'https://api.jisuapi.com/weather/query?location=' + latitude + ',' + longitude + '&appkey=87db7ff44bc87000',
       success:function(res){
         console.log(res.data)
-        that.setData({now:res.data.result})
+        var app = getApp()
+        app.globalData.weather = res.data.result.weather
+        that.setData({now:res.data.result,city:res.data.city})
+        console.log(app.globalData.weather)
       }
     })
   },
@@ -47,6 +50,14 @@ Page({
         that.setData({now:res.data.result})
         console.log(res.data) 
       }
+    })
+  },
+  gototodayindex:function(){
+    var that = this;
+    var city = that.data.now.city;
+    console.log(city)
+    wx.navigateTo({
+      url: "/pages/index/todayindex?city=" + city
     })
   },
 

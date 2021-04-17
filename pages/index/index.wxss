@@ -1,24 +1,27 @@
 
 /* pages/index/index.wxss */
-.container{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.detail{
+.page{
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
 }
-.bar{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin: 20rpx 0;
-}
-.box{
-  width: 33.3%;
+.word{
+  font-size: 50rpx;
   text-align: center;
+}
+.image{
+  justify-content: center;
+  display: flex;
+}
+.image image{
+  width: 3em;
+  height: 3em;
+}
+.word1{
+  font-size: 300rpx;
+  text-align: center;
+}
+.word1::after{
+  content: "℃";
+  font-size: 50rpx;
+  vertical-align:text-top;
 }

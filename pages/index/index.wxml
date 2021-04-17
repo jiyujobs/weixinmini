@@ -1,30 +1,22 @@
 <!--pages/index/index.wxml-->
-<view class='container'>
+<view class='page'>
   <picker mode='region' bindchange='changeRegion'>
-  <view>{{region}}</view>
+    <view class='word'>
+      <view>{{region}}</view>
+    </view>
   </picker>
-  <text>{{now.temp}}℃ {{now.text}}</text>
-  <image src='../../images/{{now.img}}.png'></image>
- <view class='detail'>
-  <view class='bar'>
-    <view class='box'>气温</view>
-    <view class='box'>最高气温</view>
-    <view class='box'>最低气温</view>
+  <view class='word'>{{now.date}}</view>
+  <view class='image'>
+    <image src='../../images/{{now.img}}.png' ></image>
   </view>
-  <view class='bar'>
-    <view class='box'>{{now.temp}}℃</view>
-    <view class='box'>{{now.temphigh}}℃</view>
-    <view class='box'>{{now.templow}}℃</view>
+  <view class='word1'>{{now.temp}}</view>
+  <view class='word'>{{now.weather}}</view>
+  <view class='word'>温度：{{now.temphigh}}°/{{now.templow}}°</view>
+  <view class='word'>湿度：{{now.humidity}}%</view>
+  <view class='word'>空气指数：{{now.aqi.aqi}}</view>
+  <view class='word' style="color:{{now.aqi.aqiinfo.color}}">{{now.aqi.quality}}</view>
+  <view class='word'>
+    <button bindtap='gototodayindex' hover-class="navigator-hover">今日指数
+    </button>
   </view>
-  <view class='bar'>
-    <view class='box'>湿度</view>
-    <view class='box'>AQI指数</view>
-    <view class='box'>风力</view>
-  </view>
-  <view class='bar'>
-    <view class='box'>{{now.humidity}}%</view>
-    <view class='box'>{{now.aqi.aqi}}</view>
-    <view class='box'>{{now.windpower}}</view>
-  </view>
- </view>
 </view>

@@ -1,0 +1,15 @@
+<!--pages/MyDairy/MyDairy.wxml-->
+<view wx:for="{{obj}}">
+  <view class='date'>
+    {{item.year}}-{{item.month}}-{{item.day}}-{{item.hour}}
+  </view>
+  <view class='weather'>
+    {{item.weather}}
+  </view>
+  <view class='mood'>
+    {{item.mood}}
+  </view>
+  <view class='content'>
+    {{item.content}}
+  </view>
+</view>

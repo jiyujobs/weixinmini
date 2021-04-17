@@ -1,0 +1,5 @@
+/* pages/NewDairy/NewDairy.wxss */
+.word{
+  font-size: 50rpx;
+  text-align: center;
+}

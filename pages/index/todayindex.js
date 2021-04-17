@@ -1,53 +1,36 @@
-// pages/fortune/fortune.js
+// pages/index/todayindex.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    date:'',
-    now:'',
-    now1:''
+    city:'',
+    now:''
   },
-  changeDate:function(e){
-    this.setData({
-      date:e.detail.value
-    })
-    this.getFortune();
-  },
-  getFortune:function(){
+  getWeather:function(){
     var that=this;
-    var myDate = new Date(that.date);
     wx.request({
-      url: 'https://api.jisuapi.com/huangli/date?appkey=87db7ff44bc87000',
+      url: 'https://api.jisuapi.com/weather/query?&appkey=87db7ff44bc87000',
       data:{
-        year:myDate.getFullYear,
-        month:myDate.getMonth,
-        day:myDate.getDate
+        city:that.data.city
       },
       success:function(res){
-        console.log(res.data)
         that.setData({now:res.data.result})
-      }
-    }),
-    wx.request({
-      url: 'https://api.jisuapi.com/astro/fortune?astroid=1&appkey=87db7ff44bc87000',
-      data:{
-        date:that.data.date
-      },
-      success:function(res){
-        console.log(res.data)
-        that.setData({now1:res.data.result.today})
+        console.log(res.data) 
       }
     })
   },
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getFortune();
+    this.setData({
+      city:options.city
+    })
+    console.log(this.data.city)
+    this.getWeather()
   },
 
   /**
