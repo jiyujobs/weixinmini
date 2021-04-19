@@ -1,24 +1,25 @@
-// pages/index/todayindex.js
+// pages/YiJi/YiJi.js
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    city:'',
-    now:''
+    obj:''
   },
-  getWeather:function(){
-    var that=this;
-    wx.request({
-      url: 'https://api.jisuapi.com/weather/query?&appkey=87db7ff44bc87000',
-      data:{
-        city:that.data.city
-      },
-      success:function(res){
-        that.setData({now:res.data.result})
-        console.log(res.data) 
-      }
+
+  getYiJi:function(e){
+    db.collection('huangli').where({
+      _id:e
+    })
+    .get().then(res=>{
+      console.log(res)
+      this.setData({
+        obj:res.data
+      })
+    }).catch(err=>{
+      console.log(err)
     })
   },
 
@@ -26,11 +27,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      city:options.city
-    })
-    console.log(this.data.city)
-    this.getWeather()
+    console.log(options)
+    this.getYiJi(options.id)
   },
 
   /**

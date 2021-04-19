@@ -1,4 +1,4 @@
-// pages/MyDairy/MyDairy.js
+// pages/DeleteDairy/DeleteDairy.js
 const db = wx.cloud.database()
 Page({
 
@@ -6,40 +6,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    obj:""
+    obj:''
+  },
+  getDairy:function(e){
+    console.log(e)
+    db.collection('dairy').where({
+      _id:e
+    })
+    .get().then(res=>{
+      console.log(res)
+      this.setData({
+        obj:res.data
+      })
+    }).catch(err=>{
+      console.log(err)
+    })
   },
 
-  getMyDairy:function(){
-    var app = getApp()
+  //删除日记
+  delete:function(e){
+    console.log(e)
     db.collection('dairy').where({
-      _openid:app.globalData.openid
+      _id:e.currentTarget.dataset.num
     })
-    .get({
-      success:res=>{
-        console.log(res)
-        this.setData({
-          obj:res.data
-        })
+    .remove({
+      success: function(res) {
+        console.log(res.data)
       }
     })
-
+    this.goback()
   },
 
-  clicktap:function(e){
-    var id
-    console.log(e)
-    id = e.currentTarget.dataset.num
-    console.log(id)
-    wx.navigateTo({
-      url: '../DeleteDairy/DeleteDairy?id='+id,
+  goback:function(){
+    wx.switchTab({
+      url: '../mood/mood',
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMyDairy()
+    console.log(options)
+    this.getDairy(options.id)
   },
 
   /**

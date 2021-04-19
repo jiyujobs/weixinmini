@@ -1,0 +1,22 @@
+<!--pages/DeleteDairy/DeleteDairy.wxml-->
+<block wx:for="{{obj}}">
+  <view class='date' bindtap="clicktap" data-num="{{item.did}}">
+    {{item.year}}-{{item.month}}-{{item.day}}
+  </view>
+  <view class='weather'>
+    {{item.weather}}
+  </view>
+  <view class='mood'>
+    {{item.mood}}
+  </view>
+  <view class='content'>
+    {{item.content}}
+  </view>
+  <view class='date' bindtap="delete" data-num="{{item._id}}">
+  <view>删除</view>
+  </view>
+  <view class='date' bindtap="goback">
+  <view>返回</view>
+  </view>
+</block>
+

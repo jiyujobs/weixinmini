@@ -1,0 +1,9 @@
+<!--pages/YiJi/YiJi.wxml-->
+<block wx:for="{{obj}}">
+  <view class='yi'>
+    {{item.yi}}
+  </view>
+  <view class='ji'>
+    {{item.ji}}
+  </view>
+</block>

@@ -5,18 +5,17 @@
       <view>{{region}}</view>
     </view>
   </picker>
-  <view class='word'>{{now.date}}</view>
-  <view class='image'>
-    <image src='../../images/{{now.img}}.png' ></image>
+  <view wx:for="{{now}}">
+    <view class='word'>{{item.date}}</view>
+    <view class='image'>
+      <image src='../../images/{{item.pngnum}}.png' ></image>
+    </view>
+    <view class='word1'>{{item.temp}}</view>
+    <view class='word'>{{item.weather}}</view>
+    <view class='word'>温度：{{item.temphigh}}°/{{item.templow}}°</view>
+    <view class='word'>湿度：{{item.humidity}}%</view>
+    <view class='word'>空气指数：{{item.aqi}}</view>
+    <view class='word' style="color:{{item.color}}">{{item.quality}}</view>
   </view>
-  <view class='word1'>{{now.temp}}</view>
-  <view class='word'>{{now.weather}}</view>
-  <view class='word'>温度：{{now.temphigh}}°/{{now.templow}}°</view>
-  <view class='word'>湿度：{{now.humidity}}%</view>
-  <view class='word'>空气指数：{{now.aqi.aqi}}</view>
-  <view class='word' style="color:{{now.aqi.aqiinfo.color}}">{{now.aqi.quality}}</view>
-  <view class='word'>
-    <button bindtap='gototodayindex' hover-class="navigator-hover">今日指数
-    </button>
-  </view>
+  
 </view>

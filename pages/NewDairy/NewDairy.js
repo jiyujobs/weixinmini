@@ -12,6 +12,10 @@ Page({
   //提交到数据库
   commit(res){
     var now = new Date()
+    var year = now.getFullYear()
+    var month = now.getMonth()+1
+    var day = now.getDate()
+    var date = now.getTime()
     var app = getApp()
     console.log(res)
     var content = res.detail.value.content
@@ -39,10 +43,10 @@ Page({
         mood:mood,
         content:content,
         weather:app.globalData.weather,
-        year:now.getFullYear(),
-        month:now.getMonth()+1,
-        day:now.getDate(),
-        hour:now.getHours()
+        year:year,
+        month:month,
+        day:day,
+        did:date.toString()
       }
     }).then(res=>{
       console.log(res)

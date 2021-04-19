@@ -1,7 +1,7 @@
 <!--pages/MyDairy/MyDairy.wxml-->
-<view wx:for="{{obj}}">
-  <view class='date'>
-    {{item.year}}-{{item.month}}-{{item.day}}-{{item.hour}}
+<block wx:for="{{obj}}">
+  <view class='date' bindtap="clicktap" data-num="{{item._id}}">
+    {{item.year}}-{{item.month}}-{{item.day}}
   </view>
   <view class='weather'>
     {{item.weather}}
@@ -12,4 +12,4 @@
   <view class='content'>
     {{item.content}}
   </view>
-</view>
+</block>

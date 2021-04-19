@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/todayindex",
     "pages/fortune/fortune",
     "pages/world/world",
     "pages/mood/mood",
     "pages/NewDairy/NewDairy",
-    "pages/MyDairy/MyDairy"
+    "pages/MyDairy/MyDairy",
+    "pages/DeleteDairy/DeleteDairy",
+    "pages/YiJi/YiJi"
   ],
   "tabBar": {
     "list":[
