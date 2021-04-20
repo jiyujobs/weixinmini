@@ -1,5 +1,8 @@
 /* pages/NewDairy/NewDairy.wxss */
-.word{
-  font-size: 50rpx;
-  text-align: center;
+.pages{
+  width: 100%;
+  height: 100vh;
+}
+.mood{
+
 }

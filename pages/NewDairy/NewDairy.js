@@ -1,14 +1,12 @@
 // pages/NewDairy/NewDairy.js
 const db = wx.cloud.database()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
 
   },
-  
   //提交到数据库
   commit(res){
     var now = new Date()

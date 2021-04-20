@@ -1,21 +1,23 @@
 <!--pages/index/index.wxml-->
 <view class='page'>
-  <picker mode='region' bindchange='changeRegion'>
-    <view class='word'>
-      <view>{{region}}</view>
-    </view>
-  </picker>
   <view wx:for="{{now}}">
-    <view class='word'>{{item.date}}</view>
+    <view></view>
+    <view class='block'>
+      <picker mode='region' bindchange='changeRegion'>
+        <view class='word'>
+          <view>{{region}}</view>
+        </view>
+      </picker>
+      <view class='word'>{{item.date}}</view>
+    </view>
+    <view class='word1'>{{item.temp}}</view>
     <view class='image'>
       <image src='../../images/{{item.pngnum}}.png' ></image>
     </view>
-    <view class='word1'>{{item.temp}}</view>
-    <view class='word'>{{item.weather}}</view>
+    <view class='weather'>{{item.weather}}</view>
     <view class='word'>温度：{{item.temphigh}}°/{{item.templow}}°</view>
     <view class='word'>湿度：{{item.humidity}}%</view>
-    <view class='word'>空气指数：{{item.aqi}}</view>
-    <view class='word' style="color:{{item.color}}">{{item.quality}}</view>
+    <view class='word' style="color:{{item.color}}">空气指数：{{item.aqi}}</view>
   </view>
-  
 </view>
+  

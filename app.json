@@ -15,19 +15,27 @@
     "list":[
       {
         "pagePath": "pages/index/index",
-        "text": "天气"
+        "text": "天气",
+        "iconPath": "images/天气.png",
+        "selectedIconPath": "images/天气.png"
       },
       {
         "pagePath": "pages/fortune/fortune",
-        "text": "运势"
+        "text": "运势",
+        "iconPath": "images/日历.png",
+        "selectedIconPath": "images/日历.png"
       },
       {
         "pagePath": "pages/world/world",
-        "text": "世界新闻"
+        "text": "世界新闻",
+        "iconPath": "images/新闻.png",
+        "selectedIconPath": "images/新闻.png"
       },
       {
         "pagePath": "pages/mood/mood",
-        "text": "心情日记"
+        "text": "心情日记",
+        "iconPath": "images/日记.png",
+        "selectedIconPath": "images/日记.png"
       }
     ]
   },

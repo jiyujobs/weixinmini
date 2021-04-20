@@ -1,8 +1,9 @@
 <!--pages/NewDairy/NewDairy.wxml-->
-<view class='word'></view>
+<view class='pages'>
 <form bindsubmit="commit">
-  <textarea name="mood" placeholder="心情"></textarea>
+  <textarea class="mood" name="mood" placeholder="心情"></textarea>
   <textarea name="content" placeholder="日记内容"></textarea>
   <button type="primary" form-type="submit">提交</button>
   <button type="primary" form-type="reset">重置</button>
 </form>
+</view>

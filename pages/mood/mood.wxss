@@ -1,6 +1,6 @@
 /* pages/mood/mood.wxss */
 page {
-  background: #f6f6f6;
+  background: #f3f5f3;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

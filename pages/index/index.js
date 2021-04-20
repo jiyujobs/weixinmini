@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    region:['省','市','区'],
+    region:[''],
     now:"",
     id:''
   },
@@ -31,14 +31,14 @@ Page({
   LoadCity:function(longitude, latitude){
     var that=this;
     wx.request({
-      url: 'https://api.jisuapi.com/weather/query?location=' + latitude + ',' + longitude + '&appkey=87db7ff44bc87000',
+      url: 'https://api.jisuapi.com/weather/query?location=' + latitude + ',' + longitude + '&appkey=2891eede00cf1ae8',
       success:function(res){
         console.log(res.data)
         var app = getApp()
         app.globalData.weather = res.data.result.weather
-        that.setData({city:res.data.result.city})
-        console.log(that.data.did)
-        console.log(that.data.city)
+        that.setData({
+          region:res.data.result.city
+        })
         db.collection("weather").add({
           data:{
             city:res.data.result.city,
@@ -77,7 +77,7 @@ Page({
   getWeather:function(){
     var that=this;
     wx.request({
-      url: 'https://api.jisuapi.com/weather/query?&appkey=87db7ff44bc87000',
+      url: 'https://api.jisuapi.com/weather/query?&appkey=2891eede00cf1ae8',
       data:{
         city:that.data.region[2],
       },
