@@ -6,6 +6,7 @@ Page({
    */
   data: {
     region:['本地','天气','状况'],
+    //region:'',
     now:''
   },
   changeRegion:function(e){
@@ -33,6 +34,8 @@ Page({
       success:function(res){
         console.log(res.data)
         that.setData({now:res.data.result})
+        //that.setData({region:res.data.result})
+        
       }
     })
   },
@@ -45,7 +48,7 @@ Page({
       },
       success:function(res){
         that.setData({now:res.data.result})
-        console.log(res.data) 
+        //console.log(res.data) 
       }
     })
   },

@@ -3,25 +3,35 @@
     "pages/index/index",
     "pages/fortune/fortune",
     "pages/world/world",
+    "pages/world/newspage",
     "pages/mood/mood"
   ],
+  
   "tabBar": {
     "list":[
       {
         "pagePath": "pages/index/index",
-        "text": "天气"
+        "text": "天气",
+        "iconPath": "",
+        "selectedIconPath": ""
       },
       {
         "pagePath": "pages/fortune/fortune",
-        "text": "运势"
+        "text": "运势",
+        "iconPath": "",
+        "selectedIconPath": ""
       },
       {
         "pagePath": "pages/world/world",
-        "text": "世界新闻"
+        "text": "世界新闻",
+        "iconPath": "images/news.jpeg",
+        "selectedIconPath": "images/news.jpeg"
       },
       {
         "pagePath": "pages/mood/mood",
-        "text": "心情日记"
+        "text": "心情日记",
+        "iconPath": "",
+        "selectedIconPath": ""
       }
     ]
   },
@@ -31,7 +41,7 @@
     "navigationBarTitleText": "今日天气",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
   "permission": {

@@ -1,4 +1,56 @@
 <!--pages/world/world.wxml-->
-<view>{{news.list[0].title}}</view>
-<view>{{news.list[0].time}}</view>
-<view>{{news.list[0].content}}</view>
+
+
+<import src="/pages/wxParse/wxParse.wxml"></import>
+
+<template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+
+<!-- 新闻类别分类条 -->
+<scroll-view scroll-x="true" class='channel'>
+  <view class='channel-item' bindtap='changeChannel' data-id="头条">热点</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="科技">科技</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="财经">财经</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="股票">股票</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="军事">军事</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="体育">体育</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="教育">教育</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="娱乐">娱乐</view>
+  <view class='channel-item' bindtap='changeChannel' data-id="科技">汽车</view>
+ 
+  
+
+</scroll-view>
+
+
+<!-- 新闻幻灯片 -->
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+  <view wx:for="{{newslist}}" wx:key="swiper{{index}}">     
+    <!-- 循环加载新闻列表数组中的新闻图片 -->
+    <view>  
+      <swiper-item>
+        <image src="{{item.pic}}" style="width: {{imageWidth}}px;" class="slide-image" model="aspectFit"></image>
+      </swiper-item>
+    </view>
+  </view>
+</swiper>
+
+<!-- 新闻标题列表 -->
+<view class="news-list">
+  <view class="news-item" wx:for="{{newslist}}" wx:key="{{item.id}}" bindtap='goToNews' data-id="{{item.id}}">
+    <view class="brief-info">
+      <view class="news-text">
+        <view class="news-title">{{item.title}}</view>
+        <view class="news-src">{{item.src}}</view>
+        <view class="news-time">{{item.time}}</view>
+      </view>
+        <image src="{{item.pic}}"></image>
+    </view>
+   
+    <!-- <text>{{item.title}}--{{item.time}}</text> -->
+
+  </view>
+
+</view>
+
+
+

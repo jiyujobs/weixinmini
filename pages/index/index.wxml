@@ -3,7 +3,7 @@
   <picker mode='region' bindchange='changeRegion'>
   <view>{{region}}</view>
   </picker>
-  <text>{{now.temp}}℃ {{now.text}}</text>
+  <text>{{now.temp}}℃ {{now.weather}}</text>
   <image src='../../images/{{now.img}}.png'></image>
  <view class='detail'>
   <view class='bar'>
