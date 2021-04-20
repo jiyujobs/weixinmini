@@ -1,34 +1,25 @@
-// pages/YiJi/YiJi.js
-const db = wx.cloud.database()
+// pages/constellation/constellation.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    obj:''
-  },
 
-  getYiJi:function(e){
-    db.collection('huangli').where({
-      _id:e
-    })
-    .get().then(res=>{
-      console.log(res)
-      this.setData({
-        obj:res.data
-      })
-    }).catch(err=>{
-      console.log(err)
-    })
   },
+  //跳转到具体星座页面
+  gotoconstellationFortune:function(e){
+    var id = e.currentTarget.dataset.num
+    wx.navigateTo({
+      url: '../constellationFortune/constellationFortune?id='+ id,
+    })
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.getYiJi(options.id)
+
   },
 
   /**

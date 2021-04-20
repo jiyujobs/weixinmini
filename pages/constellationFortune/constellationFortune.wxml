@@ -1,0 +1,22 @@
+<!--pages/constellationFortune/constellationFortune.wxml-->
+<view wx:for="{{obj}}">
+    <view>今日星座</view>
+    <view>{{item.astroname}}</view>
+    <view class='image'>
+       <image src='../../images/{{item.astroname}}.png' ></image>
+    </view>  
+    <view class='bar'>
+      <view class='box'>幸运颜色</view>
+      <view class='box'>幸运数字</view>
+      <view class='box'>贵人星座</view>
+    </view>
+    <view class='bar'>
+      <view class='box'>{{item.color}}</view>
+      <view class='box'>{{item.number}}</view>
+      <view class='box'>{{item.star}}
+        <view class='image'>
+          <image src='../../images/{{item.star}}.png' ></image>
+        </view>
+      </view>
+    </view>
+  </view>

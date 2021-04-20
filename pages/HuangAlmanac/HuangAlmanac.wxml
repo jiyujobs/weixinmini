@@ -1,5 +1,6 @@
-<!--pages/YiJi/YiJi.wxml-->
+<!--pages/HuangAlmanac/HuangAlmanac.wxml-->
 <block wx:for="{{obj}}">
+  <view>{{item.nongli}}</view>
   <view class='yi'>
     {{item.yi}}
   </view>

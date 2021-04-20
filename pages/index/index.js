@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    region:['本地','天气','状况'],
+    region:['省','市','区'],
     now:"",
     id:''
   },
@@ -35,10 +35,8 @@ Page({
       success:function(res){
         console.log(res.data)
         var app = getApp()
-        var nowtime = new Date()
-        var time = nowtime.getTime()
         app.globalData.weather = res.data.result.weather
-        that.setData({did:time.toString(),city:res.data.result.city})
+        that.setData({city:res.data.result.city})
         console.log(that.data.did)
         console.log(that.data.city)
         db.collection("weather").add({
@@ -54,7 +52,6 @@ Page({
             aqi:res.data.result.aqi.aqi,
             color:res.data.result.aqi.aqiinfo.color,
             quality:res.data.result.aqi.quality,
-            did:time.toString()
           }
         }).then(res=>{
           console.log(res)
@@ -85,8 +82,38 @@ Page({
         city:that.data.region[2],
       },
       success:function(res){
-        that.setData({now:res.data.result})
-        console.log(res.data) 
+        db.collection("weather").add({
+          data:{
+            city:res.data.result.city,
+            weather:res.data.result.weather,
+            date:res.data.result.date,
+            pngnum:res.data.result.img,
+            temp:res.data.result.temp,
+            temphigh:res.data.result.temphigh,
+            templow:res.data.result.templow,
+            humidity:res.data.result.humidity,
+            aqi:res.data.result.aqi.aqi,
+            color:res.data.result.aqi.aqiinfo.color,
+            quality:res.data.result.aqi.quality,
+          }
+        }).then(res=>{
+          console.log(res)
+          that.setData({
+            id:res._id
+          })
+          db.collection('weather').where({
+            _id:that.data.id
+          })
+          .get({
+            success:res=>{
+              console.log(res)
+              that.setData({
+              now:res.data
+              })
+              console.log(that.data.now)
+            }
+          })
+        })
       }
     })
   },

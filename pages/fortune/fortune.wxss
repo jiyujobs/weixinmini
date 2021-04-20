@@ -21,3 +21,11 @@
   width: 50%;
   text-align: center;
 }
+.image{
+  justify-content: center;
+  display: flex;
+}
+.image image{
+  width: 3em;
+  height: 3em;
+}

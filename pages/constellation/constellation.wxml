@@ -1,0 +1,15 @@
+<!--pages/constellation/constellation.wxml-->
+<view class='container'>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="1">白羊座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="6">处女座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="2">金牛座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="4">巨蟹座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="10">摩羯座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="9">射手座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="5">狮子座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="3">双鱼座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="12">双子座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="11">水瓶座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="7">天秤座</view>
+  <view class='bar' bindtap="gotoconstellationFortune" data-num="8">天蝎座</view>
+</view>

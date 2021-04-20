@@ -1,27 +1,5 @@
 <!--pages/fortune/fortune.wxml-->
 <view class='container'>
-  <picker mode='date' start="2000-01-01" end="2030-01-01" bindchange='changeDate'>
-  <view>{{date}}</view>
-  </picker>
-  <view wx:for="{{now}}">
-    <view>{{item.nongli}}</view>
-    <view class='bar' bindtap="gotoYJ" data-num="{{item._id}}">
-      <view class='box'>宜</view>
-      <view class='box'>忌</view>
-    </view>
-  </view>
-  <view wx:for="{{now1}}">
-    <view>今日星座{{item.star}}</view>
-      <view class='bar'>
-        <view class='box'>幸运颜色</view>
-        <view class='box'>幸运数字</view>
-        <view class='box'>贵人星座</view>
-      </view>
-      <view class='bar'>
-        <view class='box'>{{item.color}}</view>
-        <view class='box'>{{item.number}}</view>
-        <view class='box'>{{item.star}}
-        </view>
-      </view>
-  </view>
+  <view class='bar' bindtap="gotoHuangAlmanac">黄历</view>
+  <view class='bar' bindtap="gotoconstellation">星座</view>
 </view>
