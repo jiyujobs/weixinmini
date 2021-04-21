@@ -1,1 +1,40 @@
 /* pages/MyDairy/MyDairy.wxss */
+.block{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.divline{
+  background: #e0e3da;
+  width:100%;
+  height: 5rpx;
+}
+.content{
+  display:flex;
+  justify-content: center;
+}
+.date{
+  display:flex;
+  justify-content: center;
+}
+.button {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  color: rgb(15, 238, 15);
+}
+.image{
+  justify-content: center;
+  display: flex;
+}
+.image image{
+  width: 10vh;
+  height: 10vh;
+}
+.mood{
+  height: 10vh;
+  font-size: 5vh;
+  display: flex;
+  justify-content: center;
+}

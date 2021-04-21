@@ -1,15 +1,14 @@
 <!--pages/MyDairy/MyDairy.wxml-->
 <block wx:for="{{obj}}">
-  <view class='date' bindtap="clicktap" data-num="{{item._id}}">
+  <view class='date'>
     {{item.year}}-{{item.month}}-{{item.day}}
   </view>
-  <view class='weather'>
-    {{item.weather}}
+  <view class="image">
+    <image src="../../images/{{item.weather}}.png"></image>
   </view>
-  <view class='mood'>
+  <view class="mood">
     {{item.mood}}
   </view>
-  <view class='content'>
-    {{item.content}}
-  </view>
+  <view class="button" bindtap="clicktap" data-num="{{item._id}}">查看</view>
+  <view class="divline"></view>
 </block>

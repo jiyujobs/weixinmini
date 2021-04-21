@@ -1,10 +1,15 @@
 <!--pages/HuangAlmanac/HuangAlmanac.wxml-->
-<block wx:for="{{obj}}">
-  <view>{{item.nongli}}</view>
-  <view class='yi'>
-    {{item.yi}}
-  </view>
-  <view class='ji'>
-    {{item.ji}}
-  </view>
-</block>
+<view class="container">
+  <block wx:for="{{obj}}">
+    <view class="date">
+      {{item.nongli}}
+    </view>
+    <view class='yi'>
+      {{item.yi}}
+    </view>
+    <view class='ji'>
+      {{item.ji}}
+    </view>
+  </block>
+</view>
+

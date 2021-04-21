@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/fortune/fortune",
     "pages/world/world",
+    "pages/world/newspage",
     "pages/mood/mood",
     "pages/NewDairy/NewDairy",
     "pages/MyDairy/MyDairy",

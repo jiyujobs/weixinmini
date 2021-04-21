@@ -1,5 +1,10 @@
 <!--pages/fortune/fortune.wxml-->
+<!--pages/fortune/fortune.wxml-->
 <view class='container'>
-  <view class='bar' bindtap="gotoHuangAlmanac">黄历</view>
-  <view class='bar' bindtap="gotoconstellation">星座</view>
+  <view class='huangli' bindtap="gotoHuangAlmanac">
+    <text>黄历</text>
+  </view>
+  <view class='xingzuo' bindtap="gotoconstellation">
+    <text>星座</text>
+  </view>
 </view>

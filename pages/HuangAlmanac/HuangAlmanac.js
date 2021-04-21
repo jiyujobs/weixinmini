@@ -15,6 +15,7 @@ Page({
       url: 'https://api.jisuapi.com/huangli/date?appkey=87db7ff44bc87000',
       success:function(res){
         console.log(res.data.result)
+        
         db.collection("huangli").add({
           data:{
             nongli:res.data.result.nongli,

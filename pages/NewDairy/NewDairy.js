@@ -31,7 +31,7 @@ Page({
       wx.showModal({
         title: '提交成功!',
         showCancel: false ,//去掉取消按钮
-        confirmText: '确定',
+        confirmText: '即将返回',
         cancelText: '取消',
         confirmColor: '#36D5DD'
       })
@@ -48,6 +48,9 @@ Page({
       }
     }).then(res=>{
       console.log(res)
+      wx.switchTab({
+        url: '../mood/mood',
+      })
     })
   },
   /**
