@@ -1,10 +1,10 @@
 <!--pages/constellation/constellation.wxml-->
 <view class='container'>
-  <view class='bar1' bindtap="gotoconstellationFortune" data-num="1">摩羯座</view>
+  <view class='bar1' bindtap="gotoconstellationFortune" data-num="10">摩羯座</view>
   <view class='bar6' bindtap="gotoconstellationFortune" data-num="6">处女座</view>
   <view class='bar2' bindtap="gotoconstellationFortune" data-num="2">金牛座</view>
   <view class='bar4' bindtap="gotoconstellationFortune" data-num="4">巨蟹座</view>
-  <view class='bar10' bindtap="gotoconstellationFortune" data-num="10">白羊座</view>
+  <view class='bar10' bindtap="gotoconstellationFortune" data-num="1">白羊座</view>
   <view class='bar9' bindtap="gotoconstellationFortune" data-num="9">射手座</view>
   <view class='bar5' bindtap="gotoconstellationFortune" data-num="5">狮子座</view>
   <view class='bar3' bindtap="gotoconstellationFortune" data-num="3">双鱼座</view>

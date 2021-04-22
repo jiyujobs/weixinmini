@@ -1,15 +1,43 @@
 /* pages/HuangAlmanac/HuangAlmanac.wxss */
 .container{
   height: 100vh;
-  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -moz-background-size:100% 100%;
+  background-image: url(http://m.qpic.cn/psc?/V11Il2YV1ZFeFu/ruAMsa53pVQWN7FLK88i5loTWm36UoLeujcgDf7iI5wJ4*riKiDZfLKqig0Jc0XUz7guca9lVl919eIrOb3wpW6Liq2bOYrdbh86ASvAufQ!/mnull&bo=FgJRAxYCUQMBCS4!&rf=photolist&t=5);
 }
 .date{
+  display: flex;
   height: 10vh;
-  align-items: center;
+  width:100vw;
+  justify-content:center;
 }
 .yi{
-  height: 45vh;
+  justify-content: left;
+  width:25vw;
+  font-size: 5vw;
+  margin-left: 2vw;
+}
+.blank{
+  width:50vw;
 }
 .ji{
-  height: 45vh;
+  justify-content: right;
+  width:25vw;
+  font-size:5vw;
+}
+.block{
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+}
+.yi image{
+  width: 15vw;
+  height: 15vw;
+  margin-left: 3vw;
+}
+.ji image{
+  width: 15vw;
+  height: 15vw;
+  margin-left: 3vw;
 }

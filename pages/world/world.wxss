@@ -1,23 +1,35 @@
 /* pages/world/world.wxss */
 
+/* 新闻频道分类 */
 .channel{
   width: 100%;
   white-space: nowrap;
   border-bottom: solid 1px;
   border-bottom-color:rgb(59, 58, 58);
 }
+/* 未点击前 */
 .channel-item{
   font-size: 32rpx;
   width: rpx;
   display: inline-block;
   margin: 5rpx 20rpx;
 }
+/* 点击选取后 */
+.channel-item-selected{
+  font-size: 32rpx;
+  width: rpx;
+  display: inline-block;
+  margin: 5rpx 20rpx;
+  color: #2d61ee;
+  font-weight: bold;
+}
 
-
+/* 幻灯片 */
 swiper{
     height: 400rpx;   
 }
 
+/* */
 .news-list{
   padding: 30rpx 30rpx 0rpx 30rpx;
   min-height: 600rpx;
@@ -40,6 +52,7 @@ swiper{
   font-size: 30rpx;
 }
 
+/* 文字部分 */
 .news-text{
   display: flex;
   flex-direction: column;

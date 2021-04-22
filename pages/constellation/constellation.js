@@ -1,11 +1,9 @@
 // pages/constellation/constellation.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
   },
   //跳转到具体星座页面
   gotoconstellationFortune:function(e){
@@ -13,7 +11,6 @@ Page({
     wx.navigateTo({
       url: '../constellationFortune/constellationFortune?id='+ id,
     })
-
   },
   /**
    * 生命周期函数--监听页面加载

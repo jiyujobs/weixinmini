@@ -2,6 +2,7 @@
 <view class='pages'>
 <form bindsubmit="commit">
   <textarea class="mood" name="mood" placeholder="这一刻的心情..."></textarea>
+  <view class="divline"></view>
   <textarea class="content" name="content" placeholder="这一刻的想法..."></textarea>
   <button class="button" type="default" form-type="submit">提交</button>
 </form>

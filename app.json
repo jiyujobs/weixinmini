@@ -46,7 +46,7 @@
     "navigationBarTitleText": "To Day",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
   "permission": {

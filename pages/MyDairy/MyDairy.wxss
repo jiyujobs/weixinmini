@@ -9,10 +9,6 @@
   width:100%;
   height: 5rpx;
 }
-.content{
-  display:flex;
-  justify-content: center;
-}
 .date{
   display:flex;
   justify-content: center;

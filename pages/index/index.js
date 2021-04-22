@@ -1,7 +1,6 @@
 // pages/index/index.js
 const db = wx.cloud.database()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -10,32 +9,36 @@ Page({
     now:"",
     id:''
   },
+  //改变地区
   changeRegion:function(e){
     this.setData({
       region:e.detail.value
     })
     this.getWeather();
   },
+  //获得当地经纬度
   getLocation:function(){
     var that=this;
     wx.getLocation({
       type: 'wgs84',
       success:function(res) {
-        console.log(res)
+        //console.log(res)
         var longitude = res.longitude
         var latitude = res.latitude
         that.LoadCity(longitude, latitude)
       }
      })
   },
+  //当地天气查询
   LoadCity:function(longitude, latitude){
     var that=this;
     wx.request({
       url: 'https://api.jisuapi.com/weather/query?location=' + latitude + ',' + longitude + '&appkey=2891eede00cf1ae8',
       success:function(res){
-        console.log(res.data)
+        //console.log(res.data)
         var app = getApp()
         app.globalData.weather = res.data.result.weather
+        app.globalData.weathernumber = res.data.result.img
         that.setData({
           region:res.data.result.city
         })
@@ -54,7 +57,7 @@ Page({
             quality:res.data.result.aqi.quality,
           }
         }).then(res=>{
-          console.log(res)
+          //console.log(res)
           that.setData({
             id:res._id
           })
@@ -63,17 +66,18 @@ Page({
           })
           .get({
             success:res=>{
-              console.log(res)
+              //console.log(res)
               that.setData({
               now:res.data
               })
-              console.log(that.data.now)
+              //console.log(that.data.now)
             }
           })
         })
       }
     })
   },
+  //获取天气
   getWeather:function(){
     var that=this;
     wx.request({
@@ -97,7 +101,7 @@ Page({
             quality:res.data.result.aqi.quality,
           }
         }).then(res=>{
-          console.log(res)
+          //console.log(res)
           that.setData({
             id:res._id
           })
@@ -106,27 +110,17 @@ Page({
           })
           .get({
             success:res=>{
-              console.log(res)
+              //console.log(res)
               that.setData({
               now:res.data
               })
-              console.log(that.data.now)
+              //console.log(that.data.now)
             }
           })
         })
       }
     })
   },
-  gototodayindex:function(){
-    var that = this;
-    var city = that.data.now.city;
-    console.log(city)
-    wx.navigateTo({
-      url: "/pages/index/todayindex?city=" + city
-    })
-  },
-
-
   /**
    * 生命周期函数--监听页面加载
    */

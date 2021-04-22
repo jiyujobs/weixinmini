@@ -4,7 +4,7 @@
     {{item.year}}-{{item.month}}-{{item.day}}
   </view>
   <view class="image">
-    <image src="../../images/{{item.weather}}.png"></image>
+    <image src="../../images/{{item.weathernumber}}.png"></image>
   </view>
   <view class="mood">
     {{item.mood}}

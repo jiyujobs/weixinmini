@@ -1,14 +1,13 @@
 // pages/MyDairy/MyDairy.js
 const db = wx.cloud.database()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     obj:""
   },
-
+  //查询我的日记
   getMyDairy:function(){
     var app = getApp()
     db.collection('dairy').where({
@@ -24,7 +23,7 @@ Page({
     })
 
   },
-
+  //查看具体日记
   clicktap:function(e){
     var id
     console.log(e)
@@ -34,7 +33,6 @@ Page({
       url: '../DeleteDairy/DeleteDairy?id='+id,
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

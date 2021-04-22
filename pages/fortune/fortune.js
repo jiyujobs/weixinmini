@@ -4,23 +4,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
   },
   //跳转黄历页面
   gotoHuangAlmanac:function(){
     wx.navigateTo({
       url: '../HuangAlmanac/HuangAlmanac',
     })
-
   },
   //跳转星座页面
   gotoconstellation:function(){
     wx.navigateTo({
       url: '../constellation/constellation',
     })
-
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

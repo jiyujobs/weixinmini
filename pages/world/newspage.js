@@ -18,7 +18,9 @@ Page({
   onLoad: function (options) {
       var that=this;
       let id = options.id;
+      // 令article=所传id新闻具体内容
       var article = app.globalData.news.list[id].content;
+      // 调用wxParse处理富文本
       WxParse.wxParse('article','html',article,that,5);
   },
 

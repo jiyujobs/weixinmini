@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
   },
   //提交到数据库
   commit(res){
@@ -15,11 +14,12 @@ Page({
     var day = now.getDate()
     var date = now.getTime()
     var app = getApp()
-    console.log(res)
+    //console.log(res)
     var content = res.detail.value.content
     var mood = res.detail.value.mood
     console.log(content)
     console.log(mood)
+    //判断内容是否为空
     if (content == '' || mood == '') {
       wx.showToast({
         title: '请填写心情和日记内容',
@@ -41,13 +41,14 @@ Page({
         mood:mood,
         content:content,
         weather:app.globalData.weather,
+        weathernumber:app.globalData.weathernumber,
         year:year,
         month:month,
         day:day,
         did:date.toString()
       }
     }).then(res=>{
-      console.log(res)
+      //console.log(res)
       wx.switchTab({
         url: '../mood/mood',
       })

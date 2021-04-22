@@ -1,6 +1,5 @@
 // pages/mood/mood.js
 const app = getApp()
-
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -12,7 +11,7 @@ Page({
     canIUseGetUserProfile: false,
     canIUseOpenData: false, // 如需尝试获取用户信息可改为false
   },
-
+  //登录
   onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({
@@ -26,7 +25,7 @@ Page({
       })
     }
   },
-
+  //获取用户信息
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
@@ -38,11 +37,11 @@ Page({
           hasUserInfo: true,
         })
         this.onGetOpenid()
-        console.log(res) 
+        //console.log(res) 
       }
     })
   },
-
+  
   onGetUserInfo: function(e) {
     if (!this.data.logged && e.detail.userInfo) {
       this.setData({
@@ -54,7 +53,7 @@ Page({
       this.onGetOpenid()
     }
   },
-
+  //获取openid
   onGetOpenid: function() {
     // 调用云函数
     wx.cloud.callFunction({
@@ -86,7 +85,6 @@ Page({
     wx.navigateTo({
       url: '../MyDairy/MyDairy',
     })
-
   },
 
  

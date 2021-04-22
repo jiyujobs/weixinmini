@@ -1,1 +1,55 @@
 /* pages/DeleteDairy/DeleteDairy.wxss */
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -moz-background-size:100% 100%;
+  background-image: url(http://m.qpic.cn/psc?/V11Il2YV1ZFeFu/ruAMsa53pVQWN7FLK88i5kXSJIChIYbvDlF8l0Hk4ORaFyM9ZWkqr*0GKHQwvdUAzM3.b4a4atnEsfz7OMxpA9ChKfN2xNk7ViFa6lgT6Z0!/mnull&bo=NwR.BzcEfgcDCSw!&rf=photolist&t=5);
+}
+.date{
+  display: flex;
+  justify-content: center;
+  height:5vh;
+}
+.weather{
+  display: flex;
+  justify-content: center;
+  height:5vh;
+}
+.mood{
+  display: flex;
+  justify-content: center;
+  height:5vh;
+}
+.image{
+  justify-content: center;
+  display: flex;
+}
+.image image{
+  width: 10vh;
+  height: 10vh;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50rpx;
+  margin-left: 50rpx;
+  height:70vh;
+}
+.block{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+.delete{
+  width:50%;
+  height:5vh;
+  color:red;
+}
+.return{
+  width:50%;
+  height:5vh;
+  color:green;
+}

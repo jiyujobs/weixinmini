@@ -1,7 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class='page'>
   <view wx:for="{{now}}">
-    <view></view>
     <view class='block'>
       <picker mode='region' bindchange='changeRegion'>
         <view class='word'>

@@ -8,6 +8,7 @@ Page({
   data: {
     obj:''
   },
+  //得到日记
   getDairy:function(e){
     console.log(e)
     db.collection('dairy').where({
@@ -36,7 +37,7 @@ Page({
     })
     this.goback()
   },
-
+  //返回
   goback:function(){
     wx.switchTab({
       url: '../mood/mood',
@@ -46,7 +47,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    //console.log(options)
     this.getDairy(options.id)
   },
 

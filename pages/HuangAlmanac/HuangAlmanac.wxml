@@ -4,12 +4,17 @@
     <view class="date">
       {{item.nongli}}
     </view>
-    <view class='yi'>
-      {{item.yi}}
-    </view>
-    <view class='ji'>
-      {{item.ji}}
-    </view>
+    <view class="block">
+      <view class='yi'>
+        <image src="../../images/宜忌_宜.png"></image>
+        <view>{{item.yi}}</view>
+      </view>
+      <view class="blank"></view>
+      <view class='ji'>
+        <image src="../../images/宜忌_忌.png"></image>
+        <view>{{item.ji}}</view>
+      </view>
+    </view>    
   </block>
 </view>
 

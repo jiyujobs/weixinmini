@@ -118,7 +118,7 @@ function wxAutoImageCal(originalWidth, originalHeight,that,bindName) {
   // console.log("windowWidth" + windowWidth);
   if (originalWidth > windowWidth) {//在图片width大于手机屏幕width时候
     //autoWidth = windowWidth;
-    autoWidth = imageWidth; //图片宽度自适应,令幻灯片图片宽度=屏幕宽度
+    autoWidth = imageWidth; //图片宽度自适应,令图片宽度=屏幕宽度
     
     // console.log("autoWidth" + autoWidth);
     autoHeight = (autoWidth * originalHeight) / originalWidth;

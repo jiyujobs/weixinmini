@@ -3,7 +3,9 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
    /* align-items: center;  */
+   background-color: rgb(125, 206, 238);
 }
 .title{
   display: flex;
@@ -14,8 +16,9 @@
   display: flex;
 }
 .image image{
-  width: 10vh;
-  height: 10vh;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 20%;
 }
 .bar{
   display: flex;
@@ -25,4 +28,11 @@
 .bar1{
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.box{
+  font-size: 20px;
+}
+.box1{
+  font-size:24px;
 }

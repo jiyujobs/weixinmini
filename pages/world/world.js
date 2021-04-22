@@ -1,29 +1,19 @@
 import WxParse from '../../pages/wxParse/wxParse.js';
-const db = wx.cloud.database()
+
 var app = getApp();
 var news = app.globalData.news;
-
 // pages/world/world.js
-
 Page({
   
-  /**
-   * 图片数组swiperImg
-   */
   data: {
-    
-    // swiperImg:[ //幻灯片图片数组
-    //   {src:""},
-    //   {src:""},
-    //   {src:""}
-    // ],
     imageWidth: app.globalData.imageWidth, //图片宽度自适应,令幻灯片图片宽度=屏幕宽度
     news:'',   // 接受API返回值的中间变量news
-    channel:'财经',
+    flag:'头条',
+    channel:'头条',
     newslist:'' // 整理后的新闻列表数组
   },
 
-
+  //调API获取新闻
   getNews:function(){
     var that=this;
     wx.request({
@@ -35,14 +25,10 @@ Page({
         that.setData({news:res.data.result});   //worldnews页面中的news中间变量
         //console.log(that.data.news);
         app.globalData.news = that.data.news;   //通过worldnews页面中的news中间变量修改全局变量news的值
-        console.log(app.globalData.news);
-
-        // var article = app.globalData.news.list[2].content;
-        // WxParse.wxParse('article','html',article,that,5);
-
-        console.log(app.globalData.news.num);
+        // console.log(app.globalData.news);
+        // console.log(app.globalData.news.num);
         
-        let list =[];
+        let list =[];   //临时数组
         for (var index = 0; index < app.globalData.news.num; index++) { //整理API返回的新闻,添加ID
           let obj = {};
           obj.id = index;
@@ -54,19 +40,18 @@ Page({
           obj.title =  app.globalData.news.list[index].title;
           obj.src =  app.globalData.news.list[index].src;
           list.push(obj);
-          console.log(list[index].time);
+          // console.log(list[index].time);
        }
         that.setData({newslist:list}); //将整理好的新闻装载到新闻列表数组
-      
-    
       }
 
     })
     
   },
 
-
+  //跳转到新闻详细页面
   goToNews:function(e){
+    //console.log(e);
     let id = e.currentTarget.dataset.id;
     var that=this;
     wx.navigateTo({
@@ -75,20 +60,23 @@ Page({
 
   },
 
+  //改变新闻分区
   changeChannel:function(e){
     //console.log(e)
     let targetChannel = e.currentTarget.dataset.id;
-    console.log(targetChannel);
+    // console.log(targetChannel);
     this.setData({channel:targetChannel});
-    console.log(this.data.channel);
+    // console.log(this.data.channel);
+    this.setData({
+      flag:e.currentTarget.dataset.id
+    })
+    //改变分区后重新加载新闻
     this.getNews();
   },
 
   onLoad: function (options) { 
     this.getNews();
-    console.log(options.id);
-    
-    //this.loadNews(app.globalData.news);
+
   },
   /**
    * 生命周期函数--监听页面加载

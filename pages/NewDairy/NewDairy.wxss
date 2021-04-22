@@ -3,14 +3,23 @@
   width: 100%;
   height: 100vh;
   flex-direction: column;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -moz-background-size:100% 100%;
+  background-image: url(http://m.qpic.cn/psc?/V11Il2YV1ZFeFu/ruAMsa53pVQWN7FLK88i5oi57GcCkRgo5JOtRi3em9Dh*xLt9uPch26q8JAOjqtBsTxAIxO0o9WXqdkZtRE*PcXoOG1gMLkcX6v6NH.RKUQ!/mnull&bo=MQLmAzEC5gMDCSw!&rf=photolist&t=5);
 }
 .mood{
   height: 10vh;
 }
 .content{
-  height: 84vh;
+  height: 82vh;
 }
 .button{
-  height: 6vh;
+  height: 8vh;
   color: rgb(58, 70, 233);
+}
+.divline{
+  background: #438be9;
+  width:100%;
+  height: 3rpx;
 }
