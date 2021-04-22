@@ -2,7 +2,7 @@
 const app = getApp()
 Page({
   data: {
-    avatarUrl: './user-unlogin.png',
+    avatarUrl: 'http://m.qpic.cn/psc?/V11Il2YV1ZFeFu/ruAMsa53pVQWN7FLK88i5sduo5dOhfNrw0UFrEelCNlIrDEO7DBnfGprG113pQzNN9m1svIpoKCPVd8z0Gu2Y5bUpXMJ3gxoLPAY13CDTxk!/mnull&bo=gACAAIAAgAADCSw!&rf=photolist&t=5',
     userInfo: {},
     hasUserInfo: false,
     logged: false,
@@ -86,7 +86,5 @@ Page({
       url: '../MyDairy/MyDairy',
     })
   },
-
- 
-
+  
 })
